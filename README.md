@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was created with the guidance of The Firehose Project. It is similar to Instagram where users can post pictures and leave comments. It implements the following skills:
 
-Things you may want to cover:
+- Ruby on Rails Framework
+- TDD
+  - Built automated software tests in ruby
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app is able to be viewed here: [Grammable] 

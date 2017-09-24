@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
   describe "grams#destroy action" do
+    let(:gram) { create(:gram) }
+    
     it "shouldn't let users who didn't create the gram destroy it" do
-      gram = FactoryGirl.create(:gram)
       user = FactoryGirl.create(:user)
       sign_in user
       delete :destroy, params: { id: gram.id}
@@ -11,13 +12,11 @@ RSpec.describe GramsController, type: :controller do
     end
 
     it "shouldn't let unauthenticated users destroy a gram" do
-      gram = FactoryGirl.create(:gram)
       delete :destroy, params: { id: gram.id }
       expect(response).to redirect_to new_user_session_path
     end
 
     it "should allow a user to destroy grams" do
-      gram = FactoryGirl.create(:gram)
       sign_in gram.user
       delete :destroy, params: { id: gram.id }
       expect(response).to redirect_to root_path
